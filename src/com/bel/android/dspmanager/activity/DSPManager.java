@@ -587,10 +587,10 @@ public final class DSPManager extends Activity {
         mTitleMap.put("TITLE", getString(R.string.bluetooth_title));
         tmpList.add(mTitleMap);
         // Usb
-        mTitleMap = new HashMap<String, String>();
+        /*mTitleMap = new HashMap<String, String>();
         mTitleMap.put("ICON", R.drawable.empty_icon + "");
         mTitleMap.put("TITLE", getString(R.string.usb_title));
-        tmpList.add(mTitleMap);
+        tmpList.add(mTitleMap);*/
 
         // Determine if WM8994 is supported
         if (WM8994.isSupported(this)) {
@@ -627,7 +627,7 @@ public final class DSPManager extends Activity {
         entryString.add("headset");
         entryString.add("speaker");
         entryString.add("bluetooth");
-        entryString.add("usb");
+        //entryString.add("usb");
 
         // Determine if WM8994 is supported
         if (WM8994.isSupported(this)) {

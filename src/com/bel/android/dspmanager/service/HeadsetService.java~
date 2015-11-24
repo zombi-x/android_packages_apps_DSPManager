@@ -218,9 +218,18 @@ public class HeadsetService extends Service {
             final boolean prevUseHeadset = mUseHeadset;
             if (action.equals(AudioManager.ACTION_HEADSET_PLUG)) {
                 mUseHeadset = intent.getIntExtra("state", 0) == 1;
+<<<<<<< HEAD
+            } /*else if (action.equals(AudioManager.ACTION_ANALOG_AUDIO_DOCK_PLUG)) {
+                mUseUSB = intent.getIntExtra("state", 0) == 1;
+            }*/
+            Log.i(TAG, "Headset=" + mUseHeadset + " ; USB=" + mUseUSB);
+            if (prevUseHeadset != mUseHeadset
+                    || prevUseUSB != mUseUSB) {
+=======
             }
             Log.i(TAG, "Headset=" + mUseHeadset);
             if (prevUseHeadset != mUseHeadset) {
+>>>>>>> 9ff8536f1ed55898770c2f67d6c07110333304a1
                 updateDsp();
             }
         }
@@ -265,6 +274,10 @@ public class HeadsetService extends Service {
         registerReceiver(mAudioSessionReceiver, audioFilter);
 
         final IntentFilter intentFilter = new IntentFilter(AudioManager.ACTION_HEADSET_PLUG);
+<<<<<<< HEAD
+        //intentFilter.addAction(AudioManager.ACTION_ANALOG_AUDIO_DOCK_PLUG);
+=======
+>>>>>>> 9ff8536f1ed55898770c2f67d6c07110333304a1
         registerReceiver(mRoutingReceiver, intentFilter);
 
         registerReceiver(mPreferenceUpdateReceiver,

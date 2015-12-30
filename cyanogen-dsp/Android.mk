@@ -6,7 +6,7 @@ LOCAL_MODULE := libcyanogen-dsp
 
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_MODULE_PATH := $(TARGET_OUT_SHARED_LIBRARIES)/soundfx
+LOCAL_MODULE_RELATIVE_PATH := soundfx
 
 LOCAL_PRELINK_MODULE := false
 
@@ -37,6 +37,7 @@ LOCAL_SHARED_LIBRARIES := \
 
 include $(BUILD_SHARED_LIBRARY)
 
+ifneq ($(TARGET_USE_DEVICE_AUDIO_EFFECTS_CONF),true)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE := audio_effects.conf
@@ -50,3 +51,4 @@ LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT)/vendor/etc
 
 include $(BUILD_PREBUILT)
+endif
